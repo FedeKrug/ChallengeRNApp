@@ -1,5 +1,7 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { useFetch } from '../hooks/useFetch';
+import { UserData } from './UserData';
 
 type UserModalType = {
     username: string;
@@ -12,8 +14,8 @@ type UserModalType = {
     pictureURL: string;
 }
 
-export const UserModal = ({ pictureURL, username, name, email, lastname, gender, phone, birthday }: UserModalType) => {
-
+export const UserModal = () => {
+    const { id, pictureURL, username, name, email, lastname, gender, phone, birthday } = UserData();
 
     return (<>
         <View style={styles.container}>

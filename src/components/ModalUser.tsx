@@ -25,14 +25,14 @@ export const ModalUser = () => {
 
                         <View >
                             <UserModal
-                                name={firstName}
-                                lastname={lastName}
-                                username={username}
-                                phone={phone}
-                                birthday={birthday}
-                                email={email}
-                                gender={gender}
-                                pictureURL={pictureURL}
+                            // name={firstName}
+                            // lastname={lastName}
+                            // username={username}
+                            // phone={phone}
+                            // birthday={birthday}
+                            // email={email}
+                            // gender={gender}
+                            // pictureURL={pictureURL}
                             />
                         </View>
 
