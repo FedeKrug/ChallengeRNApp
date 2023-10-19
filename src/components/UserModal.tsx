@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { useFetch } from '../hooks/useFetch';
 import { UserData } from './UserData';
+import { useModal } from '../hooks/useModal';
 
 type UserModalType = {
     username: string;
@@ -14,9 +15,8 @@ type UserModalType = {
     pictureURL: string;
 }
 
-export const UserModal = () => {
-    const { id, pictureURL, username, name, email, lastname, gender, phone, birthday } = UserData();
-
+export const UserModal = ({ item }: any) => {
+    const { userData: { username, pictureURL, email, firstName, lastName, gender, phone, birthday } } = useModal();
     return (<>
         <View style={styles.container}>
             <Image
@@ -34,13 +34,13 @@ export const UserModal = () => {
 
             <View style={styles.textContainer}>
                 <Text style={styles.normalText}>
-                    {name}
+                    {firstName}
                 </Text>
             </View>
 
             <View style={styles.textContainer}>
                 <Text style={styles.normalText}>
-                    {lastname}
+                    {lastName}
                 </Text>
             </View>
 

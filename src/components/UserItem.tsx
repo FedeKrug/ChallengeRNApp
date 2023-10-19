@@ -8,32 +8,30 @@ type UserItemType = {
     modalIndex: number;
 }
 
-export const UserItem = ({ username, photoURL, modalIndex }: UserItemType) => {
-    const { openModal } = useModal();
-    const abrirModal = () => {
-        openModal();
-        return modalIndex;
-    }
 
+
+export const UserItem = ({ item }: any) => {
+    const { pictureURL, firstName, lastName } = item;
+    const { openModal } = useModal();
+    console.log(Object.keys(item));
     return (<>
         <TouchableOpacity
-            onPress={abrirModal}
+            onPress={() => openModal(item)}
         >
             <View style={styles.titleContainer}>
 
                 <Image style={styles.userPhoto}
                     source={{
-                        uri: photoURL
+                        uri: pictureURL
                     }}
                 />
                 <Text style={styles.title}>
-                    {username}
+                    {`${firstName}, ${lastName}`}
                 </Text>
             </View>
         </TouchableOpacity>
     </>)
 }
-
 
 const styles = StyleSheet.create({
     titleContainer: {

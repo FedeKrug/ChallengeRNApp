@@ -9,7 +9,6 @@ export const ModalUser = () => {
     const { closeModal } = useModal();
     const { modalVisible } = useContext(ModalContext);
     const { users } = useFetch();
-    const { firstName, lastName, username, email, phone, gender, birthday, pictureURL }: any = users;
 
 
     return (
@@ -25,6 +24,7 @@ export const ModalUser = () => {
 
                         <View >
                             <UserModal
+
                             // name={firstName}
                             // lastname={lastName}
                             // username={username}

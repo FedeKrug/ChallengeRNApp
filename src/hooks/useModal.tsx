@@ -3,17 +3,20 @@ import { ModalContext } from '../context/ModalContext';
 
 export const useModal = () => {
 
-    const { modalVisible, setModalVisible } = useContext(ModalContext);
-    const openModal = () => {
+    const { modalVisible, setModalVisible, userData, setUserData } = useContext(ModalContext);
+    const openModal = (item: any) => {
         setModalVisible(true);
+        setUserData(item);
     }
     const closeModal = () => {
         setModalVisible(false);
+        setUserData({ username: '', pictureURL: '', email: '', firstName: '', lastName: '', gender: '', phone: '', birthday: '' });
     }
 
     return {
         modalVisible,
         openModal,
-        closeModal
+        closeModal,
+        userData
     }
 }
